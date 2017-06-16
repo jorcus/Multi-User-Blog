@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="form" style="margin: auto;">
+        <form method="post">
+            <div class="row">
+                <div>
+                    <div class="form-login">
+                        {# (If-Else) Edit or NewPost #}
+                        {% if edit %}<h4>Edit</h4>{% else %}<h4>New Post</h4>{% endif %}
+                        <input type="text" name="subject" value="{{ subject }}" class="form-control input-sm chat-input"
+                               placeholder="subject"/>
+                        </br>
+                        <textarea rows="5" cols="50" name="content" value="" class="form-control input-sm chat-input"
+                                  placeholder="content">{{ content }}</textarea>
+                        {{ error }}
+                        </br>
+                        <div class="wrapper">
+                            {% if content %}
+                                <input type="submit" class="btn btn-primary btn-md">
+                                <button class="btn btn-primary btn-md">Cancel</button>
+                            {% else %}
+                                <input type="submit" class="btn btn-primary btn-md">
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

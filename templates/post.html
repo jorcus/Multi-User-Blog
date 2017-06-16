@@ -1,0 +1,20 @@
+<div class="col-md-4 portfolio-item">
+    <a href="/{{ p.key().id() }}">
+        <img class="img-responsive" src="http://www.pacinno.eu/wp-content/uploads/2014/05/placeholder1.png" alt="">
+    </a>
+    <h3>
+        <a href="/{{ p.key().id() }}"> {{ p.subject }}</a>
+    </h3>
+    {% if p.likes == 0 %}
+        <a href="/{{ p.key().id() }}/likes">Like</a>
+    {% else %}
+        <a href="/{{ p.key().id() }}/likes">{{ p.likes }} Like</a>
+    {% endif %}
+
+    <a href="/{{ p.key().id() }}/comment">Comment</a>
+    <a href="/{{ p.key().id() }}/delete">Delete</a>
+    <a href="/{{ p.key().id() }}/edit">Edit</a>
+    <div class="post-date">
+        {{ p.created.strftime("%d %b %Y") }}
+    </div>
+</div>

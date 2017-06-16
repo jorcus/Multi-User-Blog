@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="form" style="margin: auto;">
+        <form method="post">
+            <div class="row">
+                <div class="form-login">
+                    <div class="portfolio-item">
+                        <a href="/{{ postkey.id() }}">
+                            <img class="img-responsive"
+                                 src="http://www.pacinno.eu/wp-content/uploads/2014/05/placeholder1.png" alt="">
+                        </a>
+                        <h4><a href="/{{ postkey.id() }}" style="text-align: center;"> {{ subject }}</a></h4>
+                    </div>
+                    <textarea rows="5" cols="50" name="comment" value="" class="form-control input-sm chat-input"
+                              placeholder="Add Comment">{{ comment }}</textarea>
+                    {{ error }}
+                    </br>
+                    <div class="wrapper">
+                        {% if edit %}
+                            <input type="submit" class="btn btn-primary btn-md">
+                            <button class="btn btn-primary btn-md">Cancel</button>
+                        {% else %}
+                            <input type="submit" class="btn btn-primary btn-md">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

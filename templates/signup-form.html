@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="form" style="margin: auto;">
+        <form method="post">
+            <div class="row">
+                <div>
+                    <div class="form-login">
+                        <h4>Signup</h4>
+                        <input type="text" name="username" value="{{ username }}" class="form-control input-sm chat-input" placeholder="username" required/>
+                        {{ error_username }}<br>
+                        <input type="password" name="password" value="" class="form-control input-sm chat-input" placeholder="password" required/>
+                        {{ error_password }}<br>
+                        <input type="password" name="verify" value="" class="form-control input-sm chat-input" placeholder="comfirm password" required/>
+                        {{ error_verify }}<br>
+                        <input type="text" name="email" value="{{ email }}" class="form-control input-sm chat-input"
+                               placeholder="email (optional)">
+                        <br>
+                        <div class="wrapper">
+                            <input type="submit" class="btn btn-primary btn-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
